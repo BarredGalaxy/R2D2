@@ -28,6 +28,9 @@ client.on('message', msg => {
   if (msg.content.startsWith(prefix + "8ball")) {
     msg.channel.sendMessage(`Hey! <@` + msg.author.id + `>, :8ball: `+ answers[Math.floor(Math.random() * answers.length)])
   }
+  if (msg.content.startsWith(prefix + "mping")) {
+    msg.channel.sendMessage(`Pong! {Date.now() - msg.createdTimestamp}ms.`);
+  }
   if (msg.content.startsWith(prefix + "ip")) {
     msg.reply('The Server IP is **play.nightsofvalor.com');
   }
@@ -96,4 +99,4 @@ client.on("message", msg => {
   fs.writeFile('./points.json', JSON.stringify(points), (err) => {if(err) console.error(err)});
 });
 
-client.login('');
+client.login('yah, no');
